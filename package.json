@@ -1,5 +1,5 @@
 {
-  "name": "interview-coder-cn",
+  "name": "xray-macos",
   "version": "2.0.2",
   "description": "截屏解题助手，实时截屏并生成解题思路和答案",
   "main": "./out/main/index.js",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ooboqoo/interview-coder-cn.git"
+    "url": "git+https://github.com/ppfreedom/xray-macos.git"
   },
   "keywords": [
     "解题助手",
@@ -38,9 +38,9 @@
   "author": "Gavin Wang<ooboqoo@gmail.com>",
   "license": "CC BY-NC 4.0",
   "bugs": {
-    "url": "https://github.com/ooboqoo/interview-coder-cn/issues"
+    "url": "https://github.com/ppfreedom/xray-macos/issues"
   },
-  "homepage": "https://github.com/ooboqoo/interview-coder-cn#readme",
+  "homepage": "https://github.com/ppfreedom/xray-macos#readme",
   "dependencies": {
     "@ai-sdk/openai": "^2.0.16",
     "@electron-toolkit/preload": "^3.0.2",

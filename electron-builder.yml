@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: 截屏解题助手
+appId: org.xray.macos
+productName: xray-macos
 directories:
   buildResources: build
 files:
@@ -12,7 +12,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: 截屏解题助手
+  executableName: xray-macos
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
@@ -34,7 +34,7 @@ dmg:
 npmRebuild: false
 publish:
   provider: github
-  owner: ooboqoo
-  repo: interview-coder-cn
+  owner: ppfreedom
+  repo: xray-macos
 electronDownload:
   mirror: https://npmmirror.com/mirrors/electron/
