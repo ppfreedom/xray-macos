@@ -1,0 +1,41 @@
+name: build-mac
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: ELECTRON_SKIP_BINARY_DOWNLOAD=1 npm ci
+
+      - name: Cache Electron binaries
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/Library/Caches/electron
+            ~/Library/Caches/electron-builder
+          key: electron-${{ hashFiles('package-lock.json') }}
+
+      - name: Build (macOS, arm64)
+        run: npm run build:mac
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: mac-arm64
+          path: |
+            dist/*.dmg
+            dist/*-mac.zip
+          retention-days: 7
